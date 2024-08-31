@@ -1,0 +1,345 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="title" content="NixStays - Comfortable and Affordable Hostels, PGs, and Flats in Greater Noida">
+    <meta name="description" content="NixStays offers a wide range of hostels, paying guests (PGs), and flats for students in Greater Noida. Find the perfect accommodation near your institution, take virtual tours, and easily swap between hostels.">
+    <meta name="keywords" content="NixStays, hostels, PGs, flats, Greater Noida, student accommodation, affordable housing, virtual tours, hostel booking">
+    <meta name="author" content="NixStays">
+    <title>NixStays! - Your Next Stay</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nixstays.com/">
+    <meta property="og:title" content="NixStays - Comfortable and Affordable Hostels, PGs, and Flats in Greater Noida">
+    <meta property="og:description" content="NixStays offers a wide range of hostels, paying guests (PGs), and flats for students in Greater Noida. Find the perfect accommodation near your institution, take virtual tours, and easily swap between hostels.">
+    <meta property="og:image" content="https://www.nixstays.com/static/img/nixstays-og-image.jpg">
+    <!-- Twitter -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="web">
+    <meta name="rating" content="general">
+    <meta name="theme-color" content="#007bff">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.nixstays.com/">
+    <meta property="twitter:title" content="NixStays - Comfortable and Affordable Hostels, PGs, and Flats in Greater Noida">
+    <meta property="twitter:description" content="NixStays offers a wide range of hostels, paying guests (PGs), and flats for students in Greater Noida. Find the perfect accommodation near your institution, take virtual tours, and easily swap between hostels.">
+    <meta property="twitter:image" content="https://www.nixstays.com/static/img/nixstays-twitter-image.jpg">
+    <link rel="canonical" href="https://www.nixstays.com/">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+  
+        .slides {
+            height: 70vh;
+            width: 95%;
+            overflow: hidden;
+            position: relative;
+            border: 4px solid #79e0ee;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .slide {
+            position: absolute;
+            height: 100%;
+            opacity: 0;
+            inset: 0;
+            animation: slide-show 12s infinite;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @keyframes slide-show {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            20%,
+            30% {
+                opacity: 1;
+                scale: 1.03;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 6vh; padding-left: 1vh;"><img src="{% static 'img/logo.png' %}" alt="Logo"></i>NixStays</h1> 
+                <!-- <i class="fa fa-map-marker-alt me-3" style="color: #e7584b;"></i> -->
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="/#about" class="nav-item nav-link">About</a>
+                    <a href="/#services" class="nav-item nav-link">Services</a>
+                    <a href="/#packages" class="nav-item nav-link">Properties</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="/#localities" class="dropdown-item">Localities</a>
+                            <a href="/#testimonial" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="/#contact" class="nav-item nav-link">Contact</a>
+                </div>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'account_logout' %}" class="btn btn-primary rounded-pill py-2 px-4">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+
+                <div class="col-lg-6">
+                    <div class="slides">
+                        {% for image in property.property_images.all %}
+                            <div class="slide">
+                                <img src="{{ image.image.url }}" alt="Property Image">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-4">{{ property.name }}</h1>
+                    <p class="mb-4">{{ property.description }}</p>
+                    <div class="row g-4 mb-4">
+                        <!-- Property Details -->
+            <div class="details">
+                <p><strong>Property Type:</strong> {{ property.property_type }}</p>
+                <p><strong>Locality:</strong> {{ property.locality }}</p>
+                <p><strong>Nearest Institutes:</strong></p>
+                <ul>
+                    {% for inst in property.property_inst.all %}
+                        <li>{{ inst.institute }} - {{ inst.distance }}Km</li>
+                    {% endfor %}
+                </ul>
+                <p><strong>Price:</strong> Rs. {{ property.new_price }}/month</p>
+                <p><strong>Room Types:</strong></p>
+                <ul>
+                    {% for room_type in property.room_types.all %}
+                        <li>{{ room_type.type }} - AC Price: {{ room_type.ac_price }}, Non-AC Price: {{ room_type.non_ac_price }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <!-- Add other details below -->
+            </div>
+        </div>
+    </div>
+                    </div>
+                    <div style="margin: 5vh;">
+                    <p><strong>Bus Availability:</strong> 
+                            {% if property.bus_availability %}
+                                Yes
+                            {% else %}
+                                NO
+                            {% endif %}
+                        </p>
+                <p><strong>Amenities:</strong></p>
+                <div class="espo">
+                    {% for amenity in property.amenities.all %}
+                    <a class="btn btn-sm btn-primary px-2" style="border-radius: 30px 30px 30px 30px; background-color: rgba(155, 198, 238, 0); color: rgb(0, 0, 0);">
+                        <i><img src="{{ amenity.icon.url }}" width="21px" height="21px"></i>
+                        {{ amenity.name }}</a>
+                    {% endfor %}
+                </div>
+                <p style="margin-top: 8px;"><strong>Food Type:</strong> {% for type in property.food_type.all %}<a class="btn btn-sm btn-primary px-2" style="border-radius: 30px 30px 30px 30px; background-color: rgba(155, 198, 238, 0); color: rgb(0, 0, 0);">
+                    <i><img src="{{ type.icon.url }}" width="21px" height="21px"></i>
+                    {{ type.name }}</a>
+                {% endfor %}</p>
+                <p><strong>Menu:</strong></p>
+                {% if property.food_menu %}
+                    <div class="espo">
+                        <img src="{{ property.food_menu.url }}" alt="Menu">
+                    </div>
+                {% else %}
+                    <p>Will be updated Soon!</p>
+                {% endif %}
+                <p><strong>Laundry Service:</strong> {{ property.laundry_service }}</p>
+                <p><strong>House Keeping:</strong> {% if property.housekeeping %} Available {% else %} Not Available {% endif %}</p>
+                <p><strong>Hostel Timing:</strong> {{ property.hostel_timing }}</p>
+                <p><strong>Other Facilities:</strong> 
+                    <div class="espo">
+                        {% for fac in other %}
+                            <a class="btn btn-sm btn-primary px-2" style="border-radius: 30px 30px 30px 30px; background-color: rgba(155, 198, 238, 0); color: rgb(0, 0, 0);">
+                            {{ fac }}</a>
+                        {% endfor %}
+                    </div>
+                </p>
+                <p><strong>Nearby Market:</strong> {{ property.nearby_market }}</p>
+                <p><strong>Nearby Metro Station:</strong> {{ property.nearby_metro_station }}</p>
+                <p><strong>Contact Information:</strong></p>
+                <ul>
+                    <li> Name: NixStays Team</li>
+                    <li> Contact: +91 91197 04151</li>
+                </ul>
+                <p><strong>Address:</strong> {{ property.address }}, {{ property.zip_code }}</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{% url 'reserve_property' property.id %}">Reserve Now</a>
+                </div>
+            </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Greater Noida, UP, India</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 91197 04151</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@nixstays.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-2.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-3.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-2.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-3.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/package-1.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">NixStays</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://permutes.in/">Permutes</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    {% if user.is_authenticated %}
+        <a href="/my-reservations"><a href="/my-reservations" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-cart" href="/my-reservations"></i></a></a>
+    {% else %}
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    {% endif %}
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+

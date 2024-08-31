@@ -1,0 +1,47 @@
+{% extends "account/base_entrance.html" %}
+{% load allauth i18n %}
+{% load socialaccount %}
+{% block head_title %}
+    {% trans "Signup" %}
+{% endblock head_title %}
+
+{% block content %}
+<div class="main_div">
+    <div class="title"><h1>{% trans "Sign Up" %}</h1></div>
+
+    {% if SOCIALACCOUNT_ENABLED %}
+    <div class="social_icons">
+        <a href="{% provider_login_url 'google' %}"><i class="fab fa-google"></i><span>Continue with Google</span></a>
+    </div>
+    {% endif %}
+
+    {% if not SOCIALACCOUNT_ONLY %}
+    {% url 'account_signup' as action_url %}
+    <form method="post" action="{{ action_url }}">
+        {% csrf_token %}
+        <div class="input_box">
+            <input type="text" name="username" placeholder="{% trans 'Username' %}" required>
+            <div class="icon"><i class="fas fa-user"></i></div>
+        </div>
+        <div class="input_box">
+            <input type="email" name="email" placeholder="{% trans 'Email' %}" required>
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+        </div>
+        <div class="input_box">
+            <input type="password" name="password1" placeholder="{% trans 'Password' %}" required>
+            <div class="icon"><i class="fas fa-lock"></i></div>
+        </div>
+        <div class="input_box">
+            <input type="password" name="password2" placeholder="{% trans 'Confirm Password' %}" required>
+            <div class="icon"><i class="fas fa-lock"></i></div>
+        </div>
+        <div class="input_box button">
+            <input type="submit" value="{% trans 'Sign Up' %}">
+        </div>
+        <div class="sign_up">
+            {% blocktranslate %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktranslate %}
+        </div>
+    </form>
+    {% endif %}
+</div>
+{% endblock content %}
