@@ -1,4 +1,4 @@
-NixStays
+****NixStays****
 NixStays is a web portal designed to simplify the search for hostels, paying guests (PGs), and flats for students, especially those around academic institutions. The platform allows users to explore accommodations, take virtual tours, and reserve properties, making it easier to find the right place to stay.
 
 Features
